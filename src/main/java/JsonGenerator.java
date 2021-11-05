@@ -16,8 +16,13 @@ public class JsonGenerator {
 
     public static JsonObject getSimpleRequestDataJsonObject() {
         JsonObject jo = Json.createObjectBuilder()
-                .add("vatNumber", "123456789")
-                .add("parameter1", "data1")
+                .add("VatNumber", "123456789")
+                .add("FirstName", "George")
+                .add("LastName", "Mammos")
+                .add("FatherName", "Michalis")
+                .add("DebtCode", "HFS-HDS-2321321421")
+                .add("DebtAmount", "12345.66")
+                .add("IsOverdue", "1")
                 .build();
 
         return jo;

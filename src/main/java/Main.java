@@ -1,4 +1,6 @@
 import javax.json.JsonObject;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Map;
 
 public class Main {
@@ -16,23 +18,22 @@ public class Main {
             e.printStackTrace();
         }
 
-        System.out.println("\n\nMapSize: " + map.size());
+//        System.out.println("\n\nMapSize: " + map.size());
 
 
         String requestData = MapToXmlUtils.getXmlRequestData(map);
-        System.out.println("\n\nRequestData String: " + requestData);
+        System.out.println("\nRequestData String extracted from a map created by a json object " +
+                "without a premade class:\n" + requestData);
 
 
-        System.out.println("\n\nTesting method to convert javaObject to json without any annotations\n");
-        MockPerson mockResult = new MockPerson();
-        mockResult.setFirstName("George");
-        mockResult.setLastName("Mammos");
-        mockResult.setAge(12);
+        System.out.println("\nTesting method to convert javaObject to json without any annotations\n");
 
-        System.out.println("Pojo: \n");
+        MockPerson mockResult = MockPerson.getMockPerson();
 
+        System.out.println("Pojo:\n" + mockResult.toString());
         String jsonString = PojoToJsonUtils.getJsonStringFromPojo(mockResult);
-        System.out.println("Printing jsonString from above Pojo:\n" + jsonString);
+
+        System.out.println("Printing jsonString from above Pojo(we use Object class as parameter so any object will work) :\n" + jsonString);
     }
 
 
