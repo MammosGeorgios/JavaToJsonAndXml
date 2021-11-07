@@ -1,3 +1,5 @@
+package common;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -49,7 +51,7 @@ public class MockPerson {
 
     @Override
     public String toString() {
-        return "MockPerson{" +
+        return "common.MockPerson{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", age=" + age +

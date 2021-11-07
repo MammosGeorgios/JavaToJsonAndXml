@@ -1,3 +1,5 @@
+package common;
+
 import javax.json.Json;
 import javax.json.JsonObject;
 
