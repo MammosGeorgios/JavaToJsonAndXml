@@ -4,6 +4,9 @@ import java.util.Map;
 
 public class MapToXmlUtils {
 
+    private MapToXmlUtils() {
+    }
+
     public static String getXmlRequestData(Map requestDataMap){
         if(requestDataMap == null || requestDataMap.isEmpty())
             return null;

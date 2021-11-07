@@ -5,19 +5,20 @@ import javax.json.JsonObject;
 
 public class JsonGenerator {
 
+    private JsonGenerator() {
+    }
+
     public static JsonObject getAJsonObject() {
-        JsonObject jo = Json.createObjectBuilder()
+        return Json.createObjectBuilder()
                 .add("requestData", Json.createArrayBuilder()
                         .add(Json.createObjectBuilder()
                                 .add("firstName", "John")
                                 .add("lastName", "Doe")))
                 .build();
-
-        return jo;
     }
 
     public static JsonObject getSimpleRequestDataJsonObject() {
-        JsonObject jo = Json.createObjectBuilder()
+        return Json.createObjectBuilder()
                 .add("VatNumber", "123456789")
                 .add("FirstName", "George")
                 .add("LastName", "Mammos")
@@ -26,8 +27,6 @@ public class JsonGenerator {
                 .add("DebtAmount", "12345.66")
                 .add("IsOverdue", "1")
                 .build();
-
-        return jo;
     }
 
     public static String getJsonString() {

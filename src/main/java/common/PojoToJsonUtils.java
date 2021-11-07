@@ -5,10 +5,12 @@ import com.google.gson.GsonBuilder;
 
 public class PojoToJsonUtils {
 
+    private PojoToJsonUtils() {
+    }
+
     public static String getJsonStringFromPojo(Object object) {
         Gson gson = new GsonBuilder().create();
-        String jsonString = gson.toJson(object);
-        return jsonString;
+        return gson.toJson(object);
     }
 
 }

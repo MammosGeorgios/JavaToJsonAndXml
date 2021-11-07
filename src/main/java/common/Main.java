@@ -18,8 +18,6 @@ public class Main {
             e.printStackTrace();
         }
 
-//        System.out.println("\n\nMapSize: " + map.size());
-
 
         String requestData = MapToXmlUtils.getXmlRequestData(map);
         System.out.println("\nRequestData String extracted from a map created by a json object " +

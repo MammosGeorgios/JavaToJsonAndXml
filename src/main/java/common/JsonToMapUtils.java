@@ -11,11 +11,14 @@ import java.util.Map;
 
 public class JsonToMapUtils {
 
+    private JsonToMapUtils() {
+    }
+
     public static Map getMapFromJsonString(JsonObject jsonObject) throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
 
         Map<String, Map<String, String>> map = mapper.readValue(jsonObject.toString(), Map.class);
-        Map<String, String> result = new HashMap<String, String>();
+        Map<String, String> result = new HashMap<>();
         for (Map.Entry<String, Map<String, String>> entry : map.entrySet()) {
             result.putAll(entry.getValue());
         }
@@ -23,14 +26,11 @@ public class JsonToMapUtils {
         return result;
     }
 
-
     // Version Using Gson
-
     public static Map getMapFromJsonWithGson(JsonObject jsonObject){
-        Map<String, Object> retMap = new Gson().fromJson(
+
+        return new Gson().<Map<String, Object>>fromJson(
                 jsonObject.toString(), new TypeToken<HashMap<String, Object>>() {}.getType()
         );
-
-        return retMap;
     }
 }
